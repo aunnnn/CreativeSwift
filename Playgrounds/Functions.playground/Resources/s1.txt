@@ -1,0 +1,6 @@
+Test that this library
+is so cool
+at reading strings
+It can separate
+new lines for you
+How cool is that
