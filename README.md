@@ -118,6 +118,7 @@ class MySketch: Sketchable {
     }
 }
 ````
+Easy right?
 
 ## Installation
 
@@ -134,12 +135,12 @@ It might not be optimal, but this is how it's done internally:
 - Custom shape is achieved by UIBezierPath
 
 ## Why?
-- Swift is cool language.
+- Swift is a cool language.
 - It has Playground to preview live result!
 - Author is familiar with iOS. Who knows MacOS (OSX) please help porting.
 
 ## Caveats
-- Lagged on real device, especially heavy drawing. The framework is initially created only for quick prototyping with Playground.
+- Might Lagged on real device, especially on heavy drawing. The framework is initially created only for quick prototyping with Playground. The code and Math function is not optimized.
 
 ## TODOs
 - Read image pixels
