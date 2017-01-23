@@ -57,6 +57,7 @@
 		30E7E2811E2FF53F00B91522 /* CanvasState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasState.swift; sourceTree = "<group>"; };
 		30EA8AC01E3557D400B01165 /* TestDrawing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestDrawing.playground; sourceTree = "<group>"; };
 		30EA8AC11E3557D400B01165 /* Functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Functions.playground; sourceTree = "<group>"; };
+		30EA8AC41E35D18300B01165 /* SampleSketch.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SampleSketch.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +148,7 @@
 		30FD74461E34B9A50050E985 /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				30EA8AC41E35D18300B01165 /* SampleSketch.playground */,
 				30EA8AC01E3557D400B01165 /* TestDrawing.playground */,
 				30EA8AC11E3557D400B01165 /* Functions.playground */,
 			);

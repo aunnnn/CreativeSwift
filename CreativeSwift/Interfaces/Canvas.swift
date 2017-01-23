@@ -66,14 +66,6 @@ public protocol Canvas {
     
     /// Styles in this block will not effect global styles. E.g., If you set fill, stroke, blendMode, translate, etc. It will not effect styles outside this block.
     func drawBlock(_ drawBlock: (Canvas) -> Void)
-    
-    // TODO: Read pixels like in Processing
-    // TODO: Clipping path
-    // TODO: Fill Gradient
-    // TODO: Perline Noise 1D/2D (instead of noise1D that I picked randomly from internet...)
-    
-    // TODO?: Audio
-    // TODO: Support OSX
 //    func get(x: CGFloat, y: CGFloat) -> UIColor
 }
 
