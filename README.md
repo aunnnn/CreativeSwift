@@ -1,6 +1,7 @@
 # CreativeSwift
-Creative coding for iOS written in Swift.
+Creative coding for iOS written in Swift, inspired by Processing.
 
+*NOTE: This framework is under development, currently it can be used for fun and quick prototyping.*
 
 ## Quick Start
 Only two things to get started: Sketchable and CanvasViewController.
@@ -119,7 +120,12 @@ class MySketch: Sketchable {
 ````
 
 ## Installation
-Cocoapods in near future. Right now please open CreativeSwift.xcodeproj and build a framework yourself.
+
+### CocoaPods 
+Coming soon...
+
+### Manually
+Open CreativeSwift.xcodeproj and build the framework yourself.
 
 ## Implementation Details
 It might not be optimal, but this is how it's done internally:
@@ -127,9 +133,10 @@ It might not be optimal, but this is how it's done internally:
 - Each draw is achieved by CGContext
 - Custom shape is achieved by UIBezierPath
 
-## Why
+## Why?
+- Swift is cool language.
 - It has Playground to preview live result!
-- I'm familiar with iOS. Who is familiar OSX please help me porting it.
+- Author is familiar with iOS. Who knows MacOS (OSX) please help porting.
 
 ## Caveats
 - Lagged on real device, especially heavy drawing. The framework is initially created only for quick prototyping with Playground.
@@ -140,7 +147,7 @@ It might not be optimal, but this is how it's done internally:
 - Gradient fill
 - Perlin noise 1D and 2D (Current there's only noise1D picked from internet...)
 - Audio and FFT
-- *Support OSX (will change a lot of code and take some times...)
+- *Support MacOS (OSX) (will change a lot of code and take some times...)
 
 ## Contribute
 
