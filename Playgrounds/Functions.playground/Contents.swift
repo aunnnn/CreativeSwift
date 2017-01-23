@@ -104,7 +104,7 @@ let r2 = CGRect.init(centerX: 5, centerY: 6, width: 50, height: 50)
 r1.originX
 r1.originY
 r1.center
-r1.move(dx: 10, dy: 10)
+
 
 // Rect from size at origin .zero
 let r3 = CGSize.init(width: 50, height: 50).rectAtZero

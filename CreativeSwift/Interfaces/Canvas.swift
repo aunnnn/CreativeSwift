@@ -11,6 +11,15 @@ import Foundation
 /// Interfaces for drawings on canvas. 
 public protocol Canvas {
     
+    /// Canvas width
+    func width() -> CGFloat
+    
+    /// Canvas height
+    func height() -> CGFloat
+    
+    /// Canvas size
+    func size() -> CGSize
+    
     /// Trigger re-drawing.
     func redraw()
     
@@ -70,6 +79,18 @@ public protocol Canvas {
 }
 
 extension CanvasView: Canvas {
+    
+    func width() -> CGFloat {
+        return self.frame.width
+    }
+    
+    func height() -> CGFloat {
+        return self.frame.height
+    }
+    
+    func size() -> CGSize {
+        return self.frame.size
+    }
     
     func translate(x: CGFloat, y: CGFloat) {
         ctx?.translateBy(x: x, y: y)

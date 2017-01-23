@@ -72,11 +72,6 @@ public extension CGRect {
     init(centerX: CGFloat, centerY: CGFloat, width: CGFloat, height: CGFloat) {
         self.init(x: centerX - width/2, y: centerY - height/2, width: width, height: height)
     }
-    
-    /// Moved rect.
-    func move(dx: CGFloat, dy: CGFloat) -> CGRect {
-        return CGRect.init(x: originX + dx, y: originY + dy, width: self.width, height: self.height)
-    }
 }
 
 public extension CGSize {
@@ -92,6 +87,14 @@ public extension CGPoint {
     var xy: (CGFloat, CGFloat) {
         return (self.x, self.y)
     }
+    
+    func centerOfRect(with size: CGSize) -> CGRect {
+        return CGRect.init(center: self, size: size)
+    }
+    
+    func move(dx: CGFloat, dy: CGFloat) -> CGPoint {
+        return .init(x: self.x + dx, y: self.y + dy)
+    }
 }
 
 public extension Int {
@@ -99,6 +102,10 @@ public extension Int {
     /// Cast Int to CGFloat for doing quick operation between Int and CGFloat.
     var asCGFloat: CGFloat {
         return CGFloat(self)
+    }
+    
+    var asDouble: Double {
+        return Double(self)
     }
 }
 
@@ -119,4 +126,27 @@ public extension Int {
 public extension FloatingPoint {
     var degreesToRadians: Self { return self * .pi / 180 }
     var radiansToDegrees: Self { return self * 180 / .pi }
+}
+
+public extension UIButton {
+    
+    /// Set or get title for normal state conveniently.
+    var title: String? {
+        get {
+            return self.titleLabel?.text
+        }
+        set {
+            self.setTitle(newValue, for: .normal)
+        }
+    }
+    
+    /// Set or get title color for normal state conveniently.
+    var titleColor: UIColor? {
+        get {
+            return self.titleLabel?.textColor
+        }
+        set {
+            self.setTitleColor(newValue, for: .normal)
+        }
+    }
 }

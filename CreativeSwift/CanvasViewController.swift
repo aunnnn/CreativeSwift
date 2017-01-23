@@ -95,7 +95,7 @@ public class CanvasViewController: UIViewController, CanvasViewDelegate {
         guard let canvas = self.canvas else {
             fatalError("View should be Canvas.")
         }
-        sketchable.update(c: canvas, s: state)
+        sketchable.draw(c: canvas, s: state)
     }
     
     // MARK:- Interfaces
@@ -141,16 +141,17 @@ public class CanvasViewController: UIViewController, CanvasViewDelegate {
     func didPan(g: UIPanGestureRecognizer) {
         let location = g.location(in: self.view)
         let velocity = g.velocity(in: self.view)
-        
         switch g.state {
-        case .began, .changed, .ended:
+        case .began, .changed:
             state.isTouching = true
             state.touchLocation = location
             state.touchVelocity = velocity
             sketchable.touch(location: location, velocity: velocity)
-            fallthrough
         case .ended:
             state.isTouching = false
+            state.touchLocation = location
+            state.touchVelocity = velocity
+            sketchable.touch(location: location, velocity: velocity)
         default: break
         }
     }

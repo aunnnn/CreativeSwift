@@ -30,7 +30,7 @@ public protocol Sketchable {
     /// This function will be called repeatedly according to FPS provided.
     /// - Parameter c: Canvas to paint.
     /// - Parameter p: Panel to setup UIKits easily.
-    func update(c: Canvas, s: CanvasState)
+    func draw(c: Canvas, s: CanvasState)
     
     /// Did receive touch event. location is the same as in CanvasState provded in update(:state).
     func touch(location: CGPoint, velocity: CGPoint)

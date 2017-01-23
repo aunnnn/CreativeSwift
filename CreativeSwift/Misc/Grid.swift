@@ -75,14 +75,18 @@ public class Grid {
         return CGRect.init(origin: o, size: size)
     }
     
-    /// Returns a frame of entire row.
-    public func row(_ row: Int) -> CGRect {
-        return frame(startRow: row, startCol: 0, endRow: row, endCol: nCols-1)
+    /// Returns a frame of 'row'.
+    public func row(_ row: Int, startCol: Int?=nil, endCol: Int?=nil) -> CGRect {
+        let c1 = startCol ?? 0
+        let c2 = endCol ?? (nCols - 1)
+        return frame(startRow: row, startCol: c1, endRow: row, endCol: c2)
     }
     
     /// Returns a frame of entire column.
-    public func col(_ col: Int) -> CGRect {
-        return frame(startRow: 0, startCol: col, endRow: nRows-1, endCol: col)
+    public func col(_ col: Int, startRow: Int?=nil, endRow: Int?=nil) -> CGRect {
+        let r1 = startRow ?? 0
+        let r2 = endRow ?? nRows - 1
+        return frame(startRow: r1, startCol: col, endRow: r2, endCol: col)
     }
     
     /// Returns all blocks for this grid. It is cached and invalidated automatically.

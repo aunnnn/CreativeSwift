@@ -16,9 +16,9 @@ public protocol Panel {
     @discardableResult func label(rect: CGRect, text: String) -> UILabel
     @discardableResult func imageview(rect: CGRect, image: UIImage) -> UIImageView
     @discardableResult func textfield(rect: CGRect, placeholder: String) -> UITextField
-    @discardableResult func button(rect: CGRect, title: String, action: @escaping (UIButton, Canvas) -> Void) -> UIButton
-    @discardableResult func switchview(origin: CGPoint, action: @escaping (UISwitch, Canvas, Bool) -> Void) -> UISwitch
-    @discardableResult func slider(rect: CGRect, action: @escaping (UISlider, Canvas, CGFloat) -> Void) -> UISlider
+    @discardableResult func button(rect: CGRect, title: String, action: @escaping (UIButton) -> Void) -> UIButton
+    @discardableResult func switchview(origin: CGPoint, action: @escaping (UISwitch, Bool) -> Void) -> UISwitch
+    @discardableResult func slider(rect: CGRect, action: @escaping (UISlider, CGFloat) -> Void) -> UISlider
     
     /// Clear all elements on Panel.
     func reset()
@@ -67,7 +67,7 @@ extension PanelView: Panel {
         return textField
     }
     
-    func button(rect: CGRect, title: String, action: @escaping (UIButton, Canvas) -> Void) -> UIButton {
+    func button(rect: CGRect, title: String, action: @escaping (UIButton) -> Void) -> UIButton {
         let button = UIButton(type: .system)
         button.backgroundColor = .lightGray
         button.frame = rect
@@ -82,7 +82,7 @@ extension PanelView: Panel {
         return button
     }
     
-    func switchview(origin: CGPoint, action: @escaping (UISwitch, Canvas, Bool) -> Void) -> UISwitch {
+    func switchview(origin: CGPoint, action: @escaping (UISwitch, Bool) -> Void) -> UISwitch {
         let switchView = UISwitch()
         switchView.frame = .init(origin: origin, size: .zero)
         switchView.addTarget(self, action: #selector(self.switchValueChanged(target:)), for: .valueChanged)
@@ -93,7 +93,7 @@ extension PanelView: Panel {
         return switchView
     }
     
-    func slider(rect: CGRect, action: @escaping (UISlider, Canvas, CGFloat) -> Void) -> UISlider {
+    func slider(rect: CGRect, action: @escaping (UISlider, CGFloat) -> Void) -> UISlider {
         let slider = UISlider()
         slider.frame = rect
         slider.minimumValue = 0
